@@ -18,12 +18,13 @@ const savedData = localStorage.getItem(STORAGE_KEY);
 
 function onFormSubmit(evt) {
   evt.preventDefault();
-  if (savedData) {
-    console.log('obj: ', obj);
-  }
+
+  console.log('obj: ', obj);
+
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 
+  // Clearing data object
   for (const key in obj) {
     delete obj[key];
   }
